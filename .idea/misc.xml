@@ -3,18 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable-anydpi-v24/gender_background_selector.xml" value="0.186" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable-anydpi-v24/gender_checked_background.xml" value="0.186" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable-anydpi-v24/gender_unchecked_background.xml" value="0.186" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable-anydpi-v24/ic_female.xml" value="0.186" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable-anydpi-v24/ic_male.xml" value="0.185" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable-anydpi-v24/ic_stat_motification.xml" value="0.197" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/border.xml" value="0.216" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/bt_contact.xml" value="0.179" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/circle.xml" value="0.216" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/drank_button.xml" value="0.29" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/gender_text_selector.xml" value="0.1705" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.197" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.29" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/orange_button.xml" value="0.29" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/profile_image.xml" value="0.216" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/rectangle.xml" value="0.216" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/drawable/white_background.xml" value="0.29" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_chat.xml" value="0.22" />
-        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_choose_login_registration.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_forgotpassword.xml" value="0.1703125" />
-        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_choose_login_registration.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_facebook_auth.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_forgotpassword.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_login_facebook.xml" value="0.3242753623188406" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_main.xml" value="0.32857142857142857" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_matched.xml" value="0.3359375" />
-        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_registration.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_registration.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/activity_settings.xml" value="0.2661064425770308" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/content_matched.xml" value="0.19322916666666667" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/item.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/item_chat.xml" value="0.25" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/item_matches.xml" value="0.3359375" />
+        <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/layout/test.xml" value="0.251171875" />
         <entry key="..\:/Users/Admin/Desktop/ProjectSem4/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3675" />
       </map>
     </option>
@@ -24,5 +44,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.12" />
+      </ProjectState>
+    </option>
   </component>
 </project>

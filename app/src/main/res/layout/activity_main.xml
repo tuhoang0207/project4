@@ -5,50 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/white">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="110dp">
 
         <Button
+            android:id="@+id/matchBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="logoutUser"
-            android:text="Sign out"
-            app:layout_constraintBottom_toBottomOf="@+id/frame"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.098"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.824" />
+            android:text="Matched"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="167dp" />
 
         <Button
-            android:layout_weight="1"
+            android:id="@+id/SettingBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToMatched"
-            android:text="matched"
-            app:layout_constraintBottom_toBottomOf="@+id/frame"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.64"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.824" />
+            android:text="Setting"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="266dp" />
+
         <Button
-            android:layout_weight="1"
+            android:id="@+id/logoutBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToSettings"
-            android:text="Settings"
-            app:layout_constraintBottom_toBottomOf="@+id/frame"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.64"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.824" />
-    </LinearLayout>
+            android:text="signout"
+            tools:layout_editor_absoluteX="166dp"
+            tools:layout_editor_absoluteY="388dp" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
 
 
     <com.lorentzos.flingswipe.SwipeFlingAdapterView
@@ -66,5 +59,6 @@
         android:ems="10"
         android:inputType="textMultiLine|textPersonName"
         android:text="Name" />
+
 
 </LinearLayout>

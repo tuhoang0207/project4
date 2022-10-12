@@ -1,6 +1,7 @@
 package com.example.tinder.Matched;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,8 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MatchesViewHolder holder, int position) {
         holder.mMatchId.setText(matchesList.get(position).getUserId());
+        holder.mMatchId.setTextSize(20,20);
+        holder.mMatchId.setTextColor(Color.parseColor("#ffafbd"));
         holder.mMatchName.setText(matchesList.get(position).getName());
 
         if (!matchesList.get(position).getImageUrl().equals("default")) {

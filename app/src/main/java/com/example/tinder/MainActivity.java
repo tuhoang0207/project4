@@ -3,11 +3,20 @@ package com.example.tinder;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -49,15 +58,18 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference chatDb;
     private StorageReference mStorageRef;
 
+    private Button logoutBtn, SettingBtn, matchBtn;
     ListView listView;
     List<Model> rowItems;
     //    @InjectView(R.id.frame)
     SwipeFlingAdapterView flingContainer;
 
     EditText etToken;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
@@ -72,11 +84,44 @@ public class MainActivity extends AppCompatActivity {
         rowItems = new ArrayList<Model>();
         arrayAdapter = new arrayAdapter(this, R.layout.item, rowItems);
 
-
+        logoutBtn = findViewById(R.id.logoutBtn);
+        SettingBtn = findViewById(R.id.SettingBtn);
+        matchBtn = findViewById(R.id.matchBtn);
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
         etToken = findViewById(R.id.etToken);
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Intent intent = new Intent(MainActivity.this, ChooseLoginRegistrationActivity.class);
+                startActivity(intent);
+                finish();
+                return;
+            }
+        });
+
+        SettingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                intent.putExtra("userSex", userSex);
+                startActivity(intent);
+                return;
+            }
+        });
+
+        matchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MatchedActivity.class);
+                intent.putExtra("userSex1", userSex);
+                startActivity(intent);
+                return;
+            }
+        });
 
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
@@ -161,10 +206,12 @@ public class MainActivity extends AppCompatActivity {
                 if (snapshot.exists()) {
                     Toast.makeText(MainActivity.this, "new Connection", Toast.LENGTH_LONG).show();
 
+                    sendNotification("bạn có 1 tương hợp mới ");
 //                    FirebaseDatabase.getInstance().getReference().child("Chat");
 //                    DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Chat");
 
-                    String key = FirebaseDatabase.getInstance().getReference().child("Chat").push().getKey();
+                    String key = FirebaseDatabase.getInstance().getReference()
+                            .child("Chat").push().getKey();
 //                    chatDb.child(key);
                     usersDb.child(oppositeUserSex).child(snapshot.getKey()).child("connections").child("matches").child(currentUId).child("ChatId").setValue(key);
                     usersDb.child(userSex).child(currentUId).child("connections").child("matches").child(snapshot.getKey()).child("ChatId").setValue(key);
@@ -271,6 +318,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void sendNotification(String messageBody) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+
+        String channelId = "My channel ID";
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuiler = new NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.drawable.ic_stat_motification)
+                .setContentTitle("My noti")
+                .setContentText(messageBody)
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, "channel human", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        notificationManager.notify(0, notificationBuiler.build());
+    }
+
 
     public void logoutUser(View view) {
         mAuth.signOut();

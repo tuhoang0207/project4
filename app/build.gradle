@@ -32,6 +32,9 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:30.3.1')
+    implementation 'com.google.firebase:firebase-auth'
+
     implementation 'com.lorentzos.swipecards:library:1.0.9'
 
 //    implementation 'com.google.firebase:firebase-analytics'
@@ -42,7 +45,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'com.google.firebase:firebase-auth:21.0.6'
 
-
+    //fb authen
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
 
     //noinspection GradleCompatible
     implementation 'androidx.cardview:cardview:1.0.0'
@@ -63,4 +67,10 @@ dependencies {
     implementation 'com.android.support:support-fragment:28.0.0'
     implementation 'com.github.bumptech.glide:glide:4.13.2'
 //    implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.6.1'
 }

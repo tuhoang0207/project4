@@ -249,7 +249,7 @@ public class ChatActivity extends AppCompatActivity {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuiler = new NotificationCompat.Builder(this, channelId)
                 .setSmallIcon(R.drawable.ic_stat_motification)
-                .setContentTitle("My noti")
+                .setContentTitle("Thong bao")
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
